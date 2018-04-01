@@ -12,9 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    float currentRegenerateRotation;
+    ImageView generatePasswordButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,9 @@ public class DashboardActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        generatePasswordButton = findViewById(R.id.regenerate_password_btn);
+        currentRegenerateRotation = generatePasswordButton.getRotation();
     }
 
     @Override
@@ -93,5 +101,20 @@ public class DashboardActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void regeneratePassword(View v) {
+        currentRegenerateRotation %= 360;
+
+        float fromRotation = currentRegenerateRotation % 360;
+        float toRotation = currentRegenerateRotation += 90;
+
+        final RotateAnimation rotateAnim = new RotateAnimation(
+                fromRotation, toRotation, v.getWidth() / 2, v.getHeight() / 2);
+
+        rotateAnim.setDuration(1000); // Use 0 ms to rotate instantly
+        rotateAnim.setFillAfter(true); // Must be true or the animation will reset
+
+        v.startAnimation(rotateAnim);
     }
 }
