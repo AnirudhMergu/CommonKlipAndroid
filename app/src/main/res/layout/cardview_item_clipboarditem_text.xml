@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAlignment="viewStart"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cardview_background"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:orientation="horizontal"
+        android:textAlignment="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardview_clipboard_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/heebo"
+                android:padding="4dp"
+                android:text="@string/lorem_ipsum"
+                android:textAlignment="textStart"
+                android:typeface="sans" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cardview_device_info"
+                    android:layout_width="157dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/heebo"
+                    android:padding="4dp"
+                    android:text="Device :"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cardview_arrival_time"
+                    android:layout_width="148dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/heebo"
+                    android:padding="4dp"
+                    android:text="received 3 secs ago"
+                    android:textAlignment="viewEnd"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="90"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/copy_btn"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_gravity="right|center_vertical|end"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/copy_button_description"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_clone" />
+
+            <ImageView
+                android:id="@+id/copy_btn3"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_gravity="right|center_vertical|end"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/copy_button_description"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_trash" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

@@ -19,7 +19,7 @@ public class LauncherActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Intent intent = new Intent(LauncherActivity.this, DashboardActivity.class);
+                Intent intent = new Intent(LauncherActivity.this, MainActivity.class);
                 startActivity(intent);
 
                 finish();
